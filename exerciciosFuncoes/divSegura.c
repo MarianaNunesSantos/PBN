@@ -4,14 +4,29 @@
 
 #include <stdio.h>
 
-int divSegura(int a, int b, int *quociente);
+int divSegura(int a, int b);
 
-int divSegura(int a, int b, int *quociente){
+int divSegura(int a, int b){
+    int quociente;
     if (b == 0)
     {
         return 0;
     }
     
-    *quociente = a/b;
+    quociente = a/b;
     return 1;
+}
+
+int main(){
+
+    int A,B;
+    printf("Informe um valor para A e para B: ");
+    scanf("%d %d",&A,&B);
+    int result;
+    result = divSegura(A,B);
+    if (result == 1){
+        printf("A divisão ente %d e %d foi segura.",A,B);
+    }else{
+        printf("A divisão entre %d e %d não é segura.",A,B);
+    }
 }
